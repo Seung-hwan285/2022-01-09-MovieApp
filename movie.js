@@ -21,9 +21,11 @@ async function getMovie() {
 
     req.results.forEach(movie=>{
         const img = document.createElement("img");
-        img.src = IMGURL + movie.backdrop_path;
+        img.src = IMGURL + movie.poster_path;
         document.body.appendChild(img);
+
     });
+
 }
 
 getMovie();
