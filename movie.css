@@ -10,6 +10,7 @@ body{
 .movie-container{
     background-color: #373b69;
     width: 300px;
+    margin: 5px;
 
 }
 
@@ -21,11 +22,17 @@ body{
     color: white;
     display: flex;
     justify-content: space-between;
-    padding: 15px;
+    padding: 17px;
 
     box-shadow: 0px 4px  rgba(0,0,0,0.2);
 }
 
 .movie-info > h3{
     margin: 0;
+}
+
+#version{
+    background-color: #22245b;
+    border-radius: 5px;
+    padding: 0 10px;
 }

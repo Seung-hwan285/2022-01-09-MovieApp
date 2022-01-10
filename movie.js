@@ -6,6 +6,12 @@
     // -[x] 이미지 뿌리기
 
 
+// -[x] 영화 정보 뿌리기
+    // -[x] div태그 생성해서 movie-container 생성
+    // -[x] img 태그 ~ 남은 태그 innerHTML로 감싸기
+    // -[x] movie 객체 정보 const에 담기
+
+
 const APIURL ="https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
 const IMGURL ="https://image.tmdb.org/t/p/w1280";
 
@@ -18,10 +24,26 @@ async function getMovie() {
 
     console.log(req);
 
+    req.results.forEach(movie=>{
+
+        const {poster_path , title , vote_average} = movie;
+        const divEl = document.createElement("div");
+        divEl.className="movie-container";
+
+        divEl.innerHTML=`
+
+        <img src = "${IMGURL + poster_path}"/>
+        <div class = "movie-info">
+            <h3>${title}</h3>
+            <span id="version">${vote_average}</span>
+            
+        `;
 
 
+        document.body.appendChild(divEl);
+    });
 
-    return req;
+
 
 }
 
