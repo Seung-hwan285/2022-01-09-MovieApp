@@ -11,10 +11,15 @@
     // -[x] img 태그 ~ 남은 태그 innerHTML로 감싸기
     // -[x] movie 객체 정보 const에 담기
 
+// TODO 영화정보 클릭시 좌석예매로 이동
+    // -[x] 클릭시 seat.html로 이동
+
 
 const APIURL ="https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
 const IMGURL ="https://image.tmdb.org/t/p/w1280";
 
+
+const $=(s)=>document.querySelector(s);
 async function getMovie() {
     const resp = await fetch(APIURL);
 
@@ -43,8 +48,14 @@ async function getMovie() {
         document.body.appendChild(divEl);
     });
 
+    $(".movie-container").addEventListener("click",(e)=>{
+        location.href="seat.html";
 
+    });
 
 }
+
+
+
 
 getMovie();

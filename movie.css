@@ -12,10 +12,10 @@ body{
 
 
 .movie-container{
-
+    cursor: pointer;
     background-color: #373b69;
     width: 300px;
-    margin: 5px;
+    margin: 30px;
 
     box-shadow: 10px 5px 4px rgba(0,0,0,0.2);
 }
@@ -28,7 +28,10 @@ body{
     color: white;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 17px;
+
+
 
 }
 
@@ -36,7 +39,7 @@ body{
     margin: 0;
 }
 
-#version{
+span{
     background-color: #22245b;
     border-radius: 5px;
     padding: 0 10px;
