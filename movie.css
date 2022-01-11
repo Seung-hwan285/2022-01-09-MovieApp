@@ -46,6 +46,15 @@ span{
     padding: 0 10px;
 }
 
+#red {
+    color: red;
+}
+#orange{
+    color: orange;
+}
+#green{
+    color: green;
+}
 
 /*navbar*/
 .nav-container{
@@ -68,3 +77,4 @@ span{
     text-decoration: none;
     color: white;
 }
+

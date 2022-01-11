@@ -15,6 +15,11 @@
     // -[x] 클릭시 seat.html로 이동
 
 
+// TODO 영화 평점에 따라 색깔 부여
+    // -[x] 8이상 RED
+    // -[x] 6이상 ORANGE
+    // -[x] 나머지 GREEN
+
 const APIURL ="https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
 const IMGURL ="https://image.tmdb.org/t/p/w1280";
 
@@ -40,10 +45,10 @@ async function getMovie() {
         <img src = "${IMGURL + poster_path}"/>
         <div class = "movie-info">
             <h3>${title}</h3>
-            <span id="version">${vote_average}</span>
+            <span id="${getRating(vote_average)}">${vote_average}</span>
             
         `;
-
+        console.log(getRating(vote_average));
 
         document.body.appendChild(divEl);
     });
@@ -53,8 +58,20 @@ async function getMovie() {
 
     });
 
+
 }
 
+function getRating(vote) {
+    if(vote > 8){
+        return "red";
+    }
+    else if (vote >= 6){
+        return "orange";
+    }
+    else{
+        return "green";
+    }
+}
 
 
 
