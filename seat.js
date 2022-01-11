@@ -36,9 +36,7 @@ async function getSeats() {
     });
     //title 배열에 담아서 하나씩 추출하기
     console.log(seat.children.length);
-    if(seat.children.length===1) {
-
-        titleList.forEach(item =>{
+    titleList.forEach(item =>{
 
             // option 생성
             let opt = document.createElement("option");
@@ -49,8 +47,8 @@ async function getSeats() {
             seat.appendChild(opt);
 
 
-        });
-    }
+    });
+
 
 }
 
