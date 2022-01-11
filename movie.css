@@ -5,8 +5,8 @@
 
 body{
     background-color: #22245b;
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
+    display: flex;
+    flex-wrap: wrap;
 }
 
 
@@ -15,8 +15,8 @@ body{
     cursor: pointer;
     background-color: #373b69;
     width: 300px;
-
-    margin-top: 100px;
+    top:50px;
+    margin: 70px;
     box-shadow: 10px 5px 4px rgba(0,0,0,0.2);
 }
 
@@ -56,10 +56,27 @@ span{
     color: green;
 }
 
+
+/*header*/
+header{
+    background: #373b69;
+    width: 100%;
+    padding: 1.5rem;
+    display:  flex;
+    justify-content: flex-end;
+}
+
+
+#input{
+
+}
+
+
+
 /*navbar*/
 .nav-container{
-
     position: fixed;
+    justify-content: flex-end;
     color: black;
     list-style: none;
     border: 1px rgba(255,255,255,1.5);
