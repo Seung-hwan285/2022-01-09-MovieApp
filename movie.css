@@ -5,10 +5,13 @@
 
 body{
     background-color: #22245b;
+
+}
+
+#main{
     display: flex;
     flex-wrap: wrap;
 }
-
 
 
 .movie-container{

@@ -20,22 +20,37 @@
     // -[x] 6이상 ORANGE
     // -[x] 나머지 GREEN
 
+// TODO 검색해서 해당영화 나오게
+    // -[x] 검색 api가져오기
+    // -[] 영화 제목 입력하면 getMovie로 전달
 
 const APIURL ="https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
 const IMGURL ="https://image.tmdb.org/t/p/w1280";
-
-
+const SEARCHAPI =
+    "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
 const $=(s)=>document.querySelector(s);
-async function getMovie() {
-    const resp = await fetch(APIURL);
+
+const form = $("#form");
+const main = $("#main");
+
+getMovie(APIURL);
+
+
+async function getMovie(url) {
+    const resp = await fetch(url);
 
     const req = await resp.json();
 
 
+    showMovie(req.results);
 
-    console.log(req);
+}
 
-    req.results.forEach(movie=>{
+function showMovie(movies) {
+
+
+    main.innerHTML="";
+    movies.forEach(movie=>{
 
         const {poster_path , title , vote_average} = movie;
         const divEl = document.createElement("div");
@@ -49,9 +64,8 @@ async function getMovie() {
             <span id="${getRating(vote_average)}">${vote_average}</span>
             
         `;
-        console.log(getRating(vote_average));
 
-        document.body.appendChild(divEl);
+        main.appendChild(divEl);
     });
 
     $(".movie-container").addEventListener("click",(e)=>{
@@ -61,6 +75,8 @@ async function getMovie() {
 
 
 }
+
+
 
 function getRating(vote) {
     if(vote > 8){
@@ -74,6 +90,19 @@ function getRating(vote) {
     }
 }
 
+const search=$("#input");
+
+form.addEventListener("submit",(e)=>{
+   e.preventDefault();
+
+    if(search.value){
+        getMovie(SEARCHAPI+ search.value);
 
 
-getMovie();
+        search.value="";
+    }
+
+});
+
+
+
