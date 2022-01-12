@@ -26,7 +26,7 @@ body{
     margin-bottom: 20px;
 }
 
-#movie-seat{
+#movie{
     margin-bottom: 30px;
     border: 0;
     border-radius: 5px;
@@ -105,15 +105,26 @@ body{
 }
 
 
-span{
-    margin-top: 5px;
-    margin-left: 3px;
-}
 
+
+#NA{
+    margin-top: 8px;
+}
+#sel{
+    margin-top: 8px;
+}
+#occ{
+    margin-top: 8px;
+}
 .ticket{
     display: flex;
     justify-content: center;
     align-items: center;
 
     margin-top: 50px;
+}
+.seat-count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
