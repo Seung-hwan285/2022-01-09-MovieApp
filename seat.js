@@ -3,6 +3,11 @@
 // -[x] foreEach로 추출
 
 
+// TODO 좌석 선택하면 하늘색으로 변경
+// -[x] dom 가져오기
+// -[x] seat이거나 , occupied가 아니면 클릭했을때 색 변경
+
+
 const APIURL ="https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
 
 
@@ -10,6 +15,9 @@ const APIURL ="https://api.themoviedb.org/3/discover/movie?sort_by=popularity.de
 const $=(s)=>document.querySelector(s);
 
 let titleList=[];
+
+
+const select = $(".container");
 async function getSeats() {
 
     const resp= await fetch(APIURL);
@@ -45,5 +53,14 @@ async function getSeats() {
 
 
 }
+
+select.addEventListener("click",(e)=>{
+
+    if(e.target.classList.contains("seat") && !e.target.classList.contains("occupied")){
+        e.target.classList.toggle("selected");
+    }
+
+});
+
 
 getSeats();
