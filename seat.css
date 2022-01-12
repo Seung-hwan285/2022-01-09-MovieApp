@@ -39,7 +39,7 @@ body{
  */
 .container {
     margin-top: 5px;
-    outline: 1px solid white;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,21 +85,28 @@ body{
     width: 20%;
 }
 
-#occ{
-    color: white;
-}
-
-#sel{
-    color: skyblue;
-}
 
 .select  li{
     display: flex;
 
+}
+.seat.Occupied{
+    background: white;
+}
+.seat.selected{
+    background: skyblue;
 }
 
 
 span{
     margin-top: 5px;
     margin-left: 3px;
+}
+
+.ticket{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 50px;
 }
