@@ -24,16 +24,11 @@ async function getSeats() {
     req.results.forEach(movie=>{
         const {title}= movie;
 
-
-
         //console.log(title);
         titleList.push(title);
 
-
-
-
-
     });
+    
     //title 배열에 담아서 하나씩 추출하기
     console.log(seat.children.length);
     titleList.forEach(item =>{
